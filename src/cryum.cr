@@ -134,6 +134,8 @@ class Cryum < Gtk::Application
       send_message "?"
     end
 
+    # this is to allow Crystal fibers (eg. the spawns for HTTP requests below)
+    # to run inside the Gtk main loop
     GLib.timeout_milliseconds(20) do
       Fiber.yield
       true
