@@ -33,6 +33,8 @@ class CryumWindow < Gtk::ApplicationWindow
     super(ptr)
 
     self.border_width = 20
+    self.window_position = Gtk::WindowPosition::CENTER_ALWAYS
+    self.keep_above = true
     self.title = "Cryum"
     self.add_events Gdk::EventMask::KEY_PRESS_MASK.to_i
     self.set_default_size 500, 500
